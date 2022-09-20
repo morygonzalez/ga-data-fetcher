@@ -2,7 +2,7 @@ require 'bundler/setup'
 require 'dotenv/load'
 require 'google/analytics/data/v1beta'
 
-class GaFetcher
+class GaDataFetcher
   GA = Google::Analytics::Data::V1beta
 
   def initialize(start_date:, end_date:, metrics_names: nil, dimension_names: nil)

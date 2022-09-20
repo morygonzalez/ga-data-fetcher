@@ -1,7 +1,7 @@
-require_relative 'ga_fetcher'
+require_relative 'ga_data_fetcher'
 require 'csv'
 
-namespace :ga_fetch do
+namespace :ga_data_fetch do
   desc "Fetch recent 30 days'"
   task :recent_30_days do
     start_date = '30daysAgo'
@@ -25,7 +25,7 @@ namespace :ga_fetch do
 end
 
 def get_csv(start_date, end_date)
-  fetcher = GaFetcher.new(start_date: start_date, end_date: end_date)
+  fetcher = GaDataFetcher.new(start_date: start_date, end_date: end_date)
   response = fetcher.response.to_h
   headers = (response[:dimension_headers] + response[:metric_headers]).map {|item| item[:name] }
   rows = response.dig(:rows).map {|row|
