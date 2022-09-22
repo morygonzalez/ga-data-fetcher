@@ -36,6 +36,6 @@ def get_csv(start_date, end_date)
   }
   table = CSV::Table.new(rows)
   puts table.by_col['pagePath'].map.with_index {|item, index|
-    %(#{table.by_col['screenPageViews'][index]}\s#{item})
+    %(#{table.by_col['screenPageViews'][index]}\s#{item}\n)
   }
 end
