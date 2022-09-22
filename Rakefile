@@ -22,6 +22,13 @@ namespace :ga_data_fetch do
     end_date = 'today'
     get_csv(start_date, end_date)
   end
+
+  desc 'Fetch specific range'
+  task :range, [:start_date, :end_date] do |task, arguments|
+    start_date = arguments[:start_date]
+    end_date = arguments[:end_date]
+    get_csv(start_date, end_date)
+  end
 end
 
 def get_csv(start_date, end_date)
