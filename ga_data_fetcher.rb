@@ -39,7 +39,7 @@ class GaDataFetcher
           field_name: 'pagePath',
           string_filter: {
             match_type: 'FULL_REGEXP',
-            value: '^/(archives|categories|about|morygonzalez)?$'
+            value: '^/(archives|categories|about|morygonzalez|popular)?$'
           }
         }
       }
